@@ -2,4 +2,4 @@
 
 ##  ECAT
 
-The project is aimed for helping students, teachers and schools to improve thier education and provide quality content offline using mordern technologies
+Ecat is all about helping students, teachers and schools to improve thier education and provide quality content online/offline using mordern technologies with print media.
