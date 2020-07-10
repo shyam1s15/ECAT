@@ -17,7 +17,7 @@ school need thier student learn and to keep track of them they need weekly tests
 
 ## Buisness model
 
-Where mordern generations are using great amount of technology, Here we can also trying to give shoulder to village and rural areas, every individual must get served high class quality content, in terms of profit, our user base grows at a much larger scale which our most crucial advantage, Every start-up is race to collect the user base and provide the world class content is what our aim is. You help schools, You help students is where our profit is reliable.
+Where mordern generations are using great amount of technology, Here we can also trying to give shoulder to village and rural areas, every individual must get served high class quality content, in terms of profit, our user base grows at a much larger scale which is our most crucial advantage, Every start-up is race to collect the user base and provide the world class content is what our aim is. You help schools, You help students is where our profit is reliable.
 
 ## references
 
