@@ -21,6 +21,6 @@ Where mordern generations are using great amount of technology, Here we can also
 
 ## references
 
-  - [Visitors](https://github.com/shyam1s15/ECAT).
+  - [Visitors](https://ecat-technical-docs.web.app/guide/).
   - [Mobile developers](https://github.com/shyam1s15/ECAT/tree/mobile_code_base).
   - [Server Developers](https://github.com/shyam1s15/ECAT/tree/server_code_base).
