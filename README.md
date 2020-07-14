@@ -21,7 +21,7 @@ Where mordern generations are using great amount of technology, Here we can also
 
 ## Business Model
 
-You deliver content to students using online and offline medium where it aims for all segments. Our buisness relies on Content creators like any individual or organizations, They get benifit of brand, marketing and ease of distribution. 
+You deliver content to students using online and offline medium where it aims for all segments. Our buisness relies on Content creators like any individual or organizations, They get benefit of brand, marketing and ease of distribution. Teachers are benefited to redistribute those content to our lovely students with single click of buttons. 
 
 ## references
 
