@@ -19,7 +19,7 @@ school need thier student learn and to keep track of them they need weekly tests
 
 Where mordern generations are using great amount of technology, Here we can also trying to give shoulder to village and rural areas, every individual must get served high class quality content, in terms of profit, our user base grows at a much larger scale which is our most crucial advantage, Every start-up is in race to collect the user base and provide the world class content. You help schools, You help students is where our team and technology focused.
 
-## Business Modell
+## Business Model
 
 You deliver content to students using online and offline medium where it aims for all segments. Our buisness relies on Content creators like any individual or organizations, They get benifit of brand, marketing and ease of distribution. 
 
