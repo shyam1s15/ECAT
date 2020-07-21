@@ -33,7 +33,7 @@ class CreateDocsTable extends Migration
 
             $table->char('doc_name', 200)->default('');
             $table->char('doc_title', 200)->default('');
-            $table->char('doc_url', 60)->default('');
+            $table->text('doc_url')->nullable();
             $table->text('description')->nullable();
 
             $table->timestamps();
