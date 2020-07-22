@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'dashboard/footer.dart';
+import 'dashboard/topBar.dart';
+import 'dashboard/learnings.dart';
+import 'dashboard/recentSchools.dart';
+import 'dashboard/TopFaculties.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -26,7 +32,44 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text('Welcome Self Learner'),
+                Icon(Icons.ac_unit),
+                FloatingActionButton(
+                  backgroundColor: Colors.orange,
+                  onPressed: () {},
+                  child: Icon(Icons.ac_unit),
+                )
+              ],
+            ),
+            
+          ),
+          
+        ),
+        body: Container(
+          child: Column(
+            children: <Widget>[
+              TopBar(),
+              Learnings(),
+              VistedRecommendedSchools(),
+              RecommendedFaculties(),
+            ],
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: null,
+          child: Icon(Icons.account_balance),
+        ),
+        bottomNavigationBar: BottomAppBar(
+          child: Footer(),
+        ),
+      ),
     );
   }
 }
