@@ -19,5 +19,5 @@ Our first goal is to create a basic running application which atleast fullfill t
 ## references
 
   - [Visitors](https://ecat-technical-docs.web.app/guide/).
-  - [Mobile developers](https://github.com/shyam1s15/ECAT/tree/mobile_code_base).
+  - [Mobile developers](https://github.com/shyam1s15/ECAT/tree/mobile-code-using-flutter).
   - [Server Developers](https://github.com/shyam1s15/ECAT/tree/server_code_base).
