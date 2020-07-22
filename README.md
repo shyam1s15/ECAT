@@ -26,5 +26,5 @@ You deliver content to students using online and offline medium where it aims fo
 ## references
 
   - [Visitors](https://ecat-technical-docs.web.app/guide/).
-  - [Mobile developers](https://github.com/shyam1s15/ECAT/tree/mobile_code_base).
+  - [Mobile developers](https://github.com/shyam1s15/ECAT/tree/mobile_code_base_using_flutter).
   - [Server Developers](https://github.com/shyam1s15/ECAT/tree/server_code_base).
