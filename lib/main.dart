@@ -5,7 +5,6 @@ import 'dashboard/learnings.dart';
 import 'dashboard/recentSchools.dart';
 import 'dashboard/TopFaculties.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Dashboard',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -48,9 +47,7 @@ class MyApp extends StatelessWidget {
                 )
               ],
             ),
-            
           ),
-          
         ),
         body: Container(
           child: Column(
@@ -58,7 +55,7 @@ class MyApp extends StatelessWidget {
               TopBar(),
               Learnings(),
               VistedRecommendedSchools(),
-              RecommendedFaculties(),
+              // RecommendedFaculties(),
             ],
           ),
         ),
@@ -66,9 +63,21 @@ class MyApp extends StatelessWidget {
           onPressed: null,
           child: Icon(Icons.account_balance),
         ),
-        bottomNavigationBar: BottomAppBar(
-          child: Footer(),
-        ),
+        // bottomNavigationBar: BottomAppBar(
+        //   child: Footer(),
+        // ),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: 0,
+          type: BottomNavigationBarType.fixed,
+          items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.airplay), title: Text('Results')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.supervised_user_circle), title: Text('GURU')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.school), title: Text('Schools')),
+        ]),
       ),
     );
   }
