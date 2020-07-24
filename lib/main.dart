@@ -1,16 +1,13 @@
 import 'package:Ecat/routes/routes.dart';
+import 'package:custom_navigator/custom_scaffold.dart';
 import 'package:flutter/material.dart';
-import 'dashboard/footer.dart';
-import 'dashboard/topBar.dart';
-import 'dashboard/learnings.dart';
-import 'dashboard/recentSchools.dart';
-import 'dashboard/TopFaculties.dart';
 import 'results/index.dart';
-import 'guru/dashboard.dart';
+import 'guru/index.dart';
 import 'schools/index.dart';
+import 'dashboard/index.dart';
 
 void main() {
-  runApp(Dashboard());
+  runApp(MyApp());
 }
 
 // Below class is no more used as we follow stateful things
@@ -24,55 +21,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text('Welcome Self Learner'),
-                Icon(Icons.ac_unit),
-                FloatingActionButton(
-                  backgroundColor: Colors.orange,
-                  onPressed: () {},
-                  child: Icon(Icons.ac_unit),
-                )
-              ],
-            ),
-          ),
-        ),
-        body: Container(
-          child: Column(
-            children: <Widget>[
-              TopBar(),
-              Learnings(),
-              VistedRecommendedSchools(),
-              // RecommendedFaculties(),
-            ],
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: null,
-          child: Icon(Icons.account_balance),
-        ),
-        // bottomNavigationBar: BottomAppBar(
-        //   child: Footer(),
-        // ),
-        bottomNavigationBar: BottomNavigationBar(
-            currentIndex: 0,
-            type: BottomNavigationBarType.fixed,
-            items: [
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.home), title: Text('Home')),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.airplay), title: Text('Results')),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.supervised_user_circle),
-                  title: Text('GURU')),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.school), title: Text('Schools')),
-            ]),
-      ),
+      initialRoute: '/',
+      onGenerateRoute: Router.generateRoute,
     );
   }
 }
@@ -84,7 +34,13 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   int _currentBottomNavIndex = 0;
-
+  final _items = [
+    BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('home')),
+    BottomNavigationBarItem(icon: Icon(Icons.event), title: Text('events')),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.save_alt), title: Text('downloads')),
+    BottomNavigationBarItem(icon: Icon(Icons.school), title: Text('Schools')),
+  ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -94,66 +50,53 @@ class _DashboardState extends State<Dashboard> {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         // primaryColor: Colors.white,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text('Welcome Self Learner'),
-                Icon(Icons.ac_unit),
-                FloatingActionButton(
-                  backgroundColor: Colors.orange,
-                  onPressed: () {},
-                  child: Icon(Icons.ac_unit),
-                )
-              ],
+      home: Builder(
+        builder: (context) => CustomScaffold(
+          scaffold: Scaffold(
+            appBar: AppBar(
+              title: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text('Welcome Self Learner'),
+                    Icon(Icons.ac_unit),
+                    FloatingActionButton(
+                      backgroundColor: Colors.orange,
+                      onPressed: () {},
+                      child: Icon(Icons.ac_unit),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            body: Container(
+              child: ListView(
+                scrollDirection: Axis.vertical,
+                children: <Widget>[
+                  // TopBar(),
+                  // Learnings(),
+                  // VistedRecommendedSchools(),
+                  // RecommendedFaculties(),
+                ],
+              ),
+            ),
+            bottomNavigationBar: BottomNavigationBar(
+              items: _items,
+              type: BottomNavigationBarType.fixed,
             ),
           ),
-        ),
-        body: Container(
-          child: ListView(
-            scrollDirection: Axis.vertical,
-            children: <Widget>[
-              TopBar(),
-              Learnings(),
-              VistedRecommendedSchools(),
-              RecommendedFaculties(),
-            ],
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: null,
-          child: Icon(Icons.account_balance),
-        ),
-        // bottomNavigationBar: BottomAppBar(
-        //   child: Footer(),
-        // ),
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _currentBottomNavIndex,
-          backgroundColor: Theme.of(context).primaryColor,
-          type: BottomNavigationBarType.fixed,
-          items: [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home), title: Text('Home')),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.airplay), title: Text('Results')),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.supervised_user_circle), title: Text('GURU')),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.school), title: Text('Schools')),
+          children: <Widget>[
+            Home('0'),
+            Results('1'),
+            GuruInit('2'),
+            SchoolInit('3'),
           ],
-          onTap: (index) {
-            setState(() {
-              _currentBottomNavIndex = index;
-              // index==0 ? 
-            });
-          },
+
+          // Called when one of the [items] is tapped.
+          onItemTap: (index) {},
         ),
       ),
-      
       onGenerateRoute: Router.generateRoute,
-      initialRoute: '/',
     );
   }
 }

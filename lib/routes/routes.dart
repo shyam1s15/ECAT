@@ -1,4 +1,4 @@
-import 'package:Ecat/guru/dashboard.dart';
+import 'package:Ecat/guru/index.dart';
 import 'package:Ecat/main.dart';
 import 'package:Ecat/results/index.dart';
 import 'package:Ecat/schools/index.dart';
@@ -13,11 +13,11 @@ class Router {
       case '/':
         return MaterialPageRoute(builder: (_) => Dashboard());
       case '/results':
-        return MaterialPageRoute(builder: (_) => Results());
+        return MaterialPageRoute(builder: (_) => Results('1'));
       case '/guru':
-        return MaterialPageRoute(builder: (_) => GuruInit());
+        return MaterialPageRoute(builder: (_) => GuruInit('2'));
       case '/schools':
-        return MaterialPageRoute(builder: (_) => schoolInit());
+        return MaterialPageRoute(builder: (_) => SchoolInit('3'));
       
       default:
         return MaterialPageRoute(
