@@ -5,6 +5,7 @@ import 'results/index.dart';
 import 'guru/index.dart';
 import 'schools/index.dart';
 import 'dashboard/index.dart';
+import 'dart:async';
 
 void main() {
   runApp(MyApp());
@@ -33,8 +34,9 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-  int _currentBottomNavIndex = 0;
+  Icon _userIcon = Icon(Icons.person_outline);
   final _items = [
+    
     BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('home')),
     BottomNavigationBarItem(icon: Icon(Icons.event), title: Text('events')),
     BottomNavigationBarItem(
@@ -46,7 +48,7 @@ class _DashboardState extends State<Dashboard> {
     return MaterialApp(
       title: 'Dashboard',
       theme: ThemeData(
-        primarySwatch: Colors.yellow,
+        primarySwatch: Colors.red,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         // primaryColor: Colors.white,
       ),
@@ -56,15 +58,28 @@ class _DashboardState extends State<Dashboard> {
             appBar: AppBar(
               title: Container(
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text('Welcome Self Learner'),
-                    Icon(Icons.ac_unit),
-                    FloatingActionButton(
-                      backgroundColor: Colors.orange,
-                      onPressed: () {},
-                      child: Icon(Icons.ac_unit),
-                    )
+                    // Text containg Ecat
+                    Container(
+                      alignment: Alignment.topLeft,
+                      child: Text('Ecat'),
+                    ),
+                    Expanded(child: Container()),
+                    Container(
+                      child: Icon(Icons.search),
+                      alignment: Alignment.bottomRight,
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 15),
+                      child: IconButton(
+                        icon: this._userIcon,
+                        // onPressed: () => onClickProfile()
+                        onPressed: () {
+                          Navigator.of(context).pushNamed('/profile');
+                        },
+                      ),
+                      alignment: Alignment.bottomRight,
+                    ),
                   ],
                 ),
               ),
@@ -73,30 +88,37 @@ class _DashboardState extends State<Dashboard> {
               child: ListView(
                 scrollDirection: Axis.vertical,
                 children: <Widget>[
-                  // TopBar(),
-                  // Learnings(),
-                  // VistedRecommendedSchools(),
-                  // RecommendedFaculties(),
                 ],
               ),
             ),
             bottomNavigationBar: BottomNavigationBar(
+              // backgroundColor: Colors,
+              // fixedColor: Colors.cyanAccent,
               items: _items,
+              // items: Guest,
               type: BottomNavigationBarType.fixed,
             ),
           ),
           children: <Widget>[
             Home('0'),
+            // Navigator.of(context).pushNamed('/'),
             Results('1'),
             GuruInit('2'),
             SchoolInit('3'),
+            // ProfileBase(),
           ],
 
+        
           // Called when one of the [items] is tapped.
           onItemTap: (index) {},
         ),
       ),
       onGenerateRoute: Router.generateRoute,
     );
+  }
+
+  void onClickProfile() {
+    // Navigator.of(context)
+    print('something');
   }
 }
