@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     // below is our data, which helps directly using it
-    final args = settings.arguments;
-
+    
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(builder: (_) => Dashboard());

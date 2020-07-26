@@ -15,7 +15,7 @@ class _RecommendedFacultiesState extends State<RecommendedFaculties> {
         scrollDirection: Axis.horizontal,
         children: <Widget>[
           Container(
-            child: Text('Top Faculties'),
+            child: Text("Learn from India's Top Faculties"),
             width: 200,
           ),
           // Faculties

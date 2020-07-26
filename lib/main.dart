@@ -1,11 +1,13 @@
+import 'package:Ecat/articles/index.dart';
 import 'package:Ecat/routes/routes.dart';
+import 'package:Ecat/staticConfig.dart';
 import 'package:custom_navigator/custom_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'results/index.dart';
 import 'guru/index.dart';
 import 'schools/index.dart';
 import 'dashboard/index.dart';
-import 'dart:async';
+import 'articles/article_data.dart';
 
 void main() {
   runApp(MyApp());
@@ -34,11 +36,10 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-  Icon _userIcon = Icon(Icons.person_outline);
   final _items = [
-    
     BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('home')),
-    BottomNavigationBarItem(icon: Icon(Icons.event), title: Text('events')),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.assignment), title: Text('Articles')),
     BottomNavigationBarItem(
         icon: Icon(Icons.save_alt), title: Text('downloads')),
     BottomNavigationBarItem(icon: Icon(Icons.school), title: Text('Schools')),
@@ -55,40 +56,11 @@ class _DashboardState extends State<Dashboard> {
       home: Builder(
         builder: (context) => CustomScaffold(
           scaffold: Scaffold(
-            appBar: AppBar(
-              title: Container(
-                child: Row(
-                  children: <Widget>[
-                    // Text containg Ecat
-                    Container(
-                      alignment: Alignment.topLeft,
-                      child: Text('Ecat'),
-                    ),
-                    Expanded(child: Container()),
-                    Container(
-                      child: Icon(Icons.search),
-                      alignment: Alignment.bottomRight,
-                    ),
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 15),
-                      child: IconButton(
-                        icon: this._userIcon,
-                        // onPressed: () => onClickProfile()
-                        onPressed: () {
-                          Navigator.of(context).pushNamed('/profile');
-                        },
-                      ),
-                      alignment: Alignment.bottomRight,
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            appBar: EcatAppBar(this.context, userName: "shyam"),
             body: Container(
               child: ListView(
                 scrollDirection: Axis.vertical,
-                children: <Widget>[
-                ],
+                children: <Widget>[],
               ),
             ),
             bottomNavigationBar: BottomNavigationBar(
@@ -102,15 +74,16 @@ class _DashboardState extends State<Dashboard> {
           children: <Widget>[
             Home('0'),
             // Navigator.of(context).pushNamed('/'),
-            Results('1'),
+            ArticlesInit('1'),
             GuruInit('2'),
             SchoolInit('3'),
             // ProfileBase(),
           ],
 
-        
           // Called when one of the [items] is tapped.
-          onItemTap: (index) {},
+          onItemTap: (index) {
+            onClickProfile();
+          },
         ),
       ),
       onGenerateRoute: Router.generateRoute,
@@ -119,6 +92,7 @@ class _DashboardState extends State<Dashboard> {
 
   void onClickProfile() {
     // Navigator.of(context)
-    print('something');
+    // print('something');
+    print(articles[0].title);
   }
 }

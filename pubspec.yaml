@@ -24,6 +24,11 @@ dependencies:
   flutter:
     sdk: flutter
   custom_navigator: ^0.3.0
+  two_letter_icon: ^0.0.1
+  mobile_popup: ^1.2.0
+  liquid_pull_to_refresh: ^2.0.0
+
+
 
 
 
