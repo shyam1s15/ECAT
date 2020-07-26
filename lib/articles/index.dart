@@ -4,11 +4,11 @@ import 'dart:math';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 
 class ArticlesInit extends StatefulWidget {
-  final _fakeVar;
+  final _appContext;
   @override
   _ArticlesInitState createState() => _ArticlesInitState();
 
-  const ArticlesInit(this._fakeVar) : assert(_fakeVar != null);
+  const ArticlesInit(this._appContext) : assert(_appContext != null);
   // const Results(this._title) : assert(_title != null);
 
 }
@@ -46,13 +46,17 @@ class _ArticlesInitState extends State<ArticlesInit> {
                     Icons.launch,
                     color: Colors.green,
                   ),
-                  onPressed: null)
+                  onPressed: () {
+                    passDetailedArticle(widget._appContext,article);
+                    // Navigator.of(widget._appContext).pushNamed('/profile');
+                    // print(article.title);
+                  })
             ],
           ),
         ]);
   }
 
-  suffleArticles(articles) {
+  Future suffleArticles(articles) {
     var random = new Random();
 
     // Go through all elements.
@@ -69,5 +73,12 @@ class _ArticlesInitState extends State<ArticlesInit> {
     setState(() {
       _articles = articles;
     });
+
+    return Future.delayed(Duration(seconds: 1));
+  }
+
+  passDetailedArticle(context, article) {
+    // Navigator.of(context).pushNamed('/profile');
+    Navigator.pushNamed(context, '/detailedArticle', arguments: article);
   }
 }

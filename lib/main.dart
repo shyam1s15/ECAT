@@ -8,6 +8,7 @@ import 'guru/index.dart';
 import 'schools/index.dart';
 import 'dashboard/index.dart';
 import 'articles/article_data.dart';
+import 'package:Ecat/articles/expandedArticle.dart';
 
 void main() {
   runApp(MyApp());
@@ -74,7 +75,7 @@ class _DashboardState extends State<Dashboard> {
           children: <Widget>[
             Home('0'),
             // Navigator.of(context).pushNamed('/'),
-            ArticlesInit('1'),
+            ArticlesInit(context),
             GuruInit('2'),
             SchoolInit('3'),
             // ProfileBase(),

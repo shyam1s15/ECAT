@@ -1,3 +1,4 @@
+import 'package:Ecat/articles/expandedArticle.dart';
 import 'package:Ecat/guru/index.dart';
 import 'package:Ecat/main.dart';
 import 'package:Ecat/profile/index.dart';
@@ -18,6 +19,8 @@ class Router {
         return MaterialPageRoute(builder: (_) => GuruInit('2'));
       case '/schools':
         return MaterialPageRoute(builder: (_) => SchoolInit('3'));
+      case '/detailedArticle':
+        return MaterialPageRoute(builder: (_) => ExpandedArticle(settings.arguments));
       case '/profile':
         // return MaterialPageRoute(builder: (context) => ProfileBase());
         return PageRouteBuilder(
@@ -32,7 +35,9 @@ class Router {
             },
             pageBuilder: (context, animation, secondaryAnimation) {
               return ProfileBase();
-            });
+          });
+
+      
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
